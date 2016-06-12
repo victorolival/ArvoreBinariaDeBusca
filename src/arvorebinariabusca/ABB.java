@@ -185,27 +185,5 @@ public class ABB {
     }
             
          
-    /*private void inserirValorAux (Integer valor, Node no) {
-        if (valor < no.getValor()) {
-            if (no.getEsq() == null) {
-                Node filhoEsq = new Node();
-                filhoEsq.setValor(valor);
-                no.setEsq(filhoEsq);
-                return;
-            } else {
-                inserirValorAux(valor,no.getEsq());
-                return;
-            }
-        } else {
-            if (no.getDir() == null) {
-                Node filhoDir = new Node();
-                filhoDir.setValor(valor);
-                no.setDir(filhoDir);
-                return;
-            } else {
-                inserirValorAux(valor,no.getDir());
-                return;
-            }
-        }
-    }*/
+    
 }
