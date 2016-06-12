@@ -7,15 +7,31 @@ package arvorebinariabusca;
 
 /**
  *
- * @author Matheus
+ * @author fabio.tpereiro
  */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    
+    public static void main (String [] args) {
+        
+        ABB arvore = new ABB ();
+        arvore.inserirValor(7);
+        arvore.inserirValor(4);
+        arvore.inserirValor(9);
+        arvore.inserirValor(3);
+        arvore.inserirValor(1);
+        arvore.inserirValor(10);
+        arvore.inserirValor(6);
+        arvore.inserirValor(2);
+        
+        arvore.print();
+        arvore.printEmOrdem();
+        System.out.println ();
+        System.out.println(arvore.getMax());
+        System.out.println(arvore.getSoma ());
+        
+    
     }
+    
+    
     
 }
