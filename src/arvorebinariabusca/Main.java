@@ -16,12 +16,16 @@ public class Main {
         ABB arvore = new ABB ();
         arvore.inserirValor(7);
         arvore.inserirValor(4);
-        arvore.inserirValor(9);
-        arvore.inserirValor(3);
-        arvore.inserirValor(1);
-        arvore.inserirValor(10);
-        arvore.inserirValor(6);
+        arvore.inserirValor(5);
         arvore.inserirValor(2);
+        arvore.inserirValor(6);
+        arvore.inserirValor(10);
+        arvore.inserirValor(8);
+        arvore.inserirValor(11);
+        arvore.inserirValor(12);
+        arvore.inserirValor(9);
+        
+        
         
         arvore.print();
         arvore.printEmOrdem();
@@ -29,6 +33,14 @@ public class Main {
         System.out.println(arvore.getMax());
         System.out.println(arvore.getSoma ());
         
+        arvore.removeValor(4);
+        arvore.print();
+        
+        arvore.removeValor(7);
+        arvore.print();
+        
+        arvore.removeValor(10);
+        arvore.print();
     
     }
     

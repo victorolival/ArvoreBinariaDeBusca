@@ -117,88 +117,95 @@ public class ABB {
         return no.getValor() + getSomaAux(no.getEsq()) + getSomaAux(no.getDir());
     }
     
-    public void remove (int valor) {
+    public void removeValor (int valor) {
+        if (valor == raiz.getValor()){
+            if (raiz.getEsq() != null){
+                int aux = getMaxAux(raiz.getEsq(), Integer.MIN_VALUE);
+                removeValorAux(aux, raiz);
+                raiz.setValor(aux);
+            }
+        }
+        else {
+            removeValorAux(valor, raiz);
+        }
+    }
+    
+    public void removeValorAux (int valor, Node no){
+        if (valor < no.getValor()) {
+            if (no.getEsq().getValor() == valor){
+                Node noaux = no.getEsq();
+                if (noaux.getEsq() == null & noaux.getDir() == null){
+                    no.setEsq(null);
+                }
+                else{
+                    if(noaux.getEsq() == null){
+                        no.setEsq(noaux.getDir());
+                    }
+                    else{
+                        no.setEsq(noaux.getEsq());
+                        if(no.getEsq().getDir() == null){
+                            no.getEsq().setDir(noaux.getDir());
+                        }
+                        else{
+                            no.getEsq().getDir().setDir(noaux.getDir());
+                        }
+                    }
+                }  
+            }
+            else{
+                removeValorAux(valor, no.getEsq());
+            }
+        }
         
+        if (valor > no.getValor()) {
+            if (no.getDir().getValor() == valor){
+                Node noaux = no.getDir();
+                if (noaux.getEsq() == null & noaux.getDir() == null){
+                    no.setDir(null);
+                }
+                else{
+                    if(noaux.getEsq() == null){
+                        no.setDir(noaux.getDir());
+                    }
+                    else{
+                        no.setDir(noaux.getEsq());
+                        if(no.getDir().getDir() == null){
+                            no.getDir().setDir(noaux.getDir());
+                        }
+                        else{
+                            no.getDir().getDir().setDir(noaux.getDir());
+                        }
+                    }
+                }  
+            }
+            else{
+                removeValorAux(valor, no.getDir());
+            }
+        }
     }
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-    
+         
+    /*private void inserirValorAux (Integer valor, Node no) {
+        if (valor < no.getValor()) {
+            if (no.getEsq() == null) {
+                Node filhoEsq = new Node();
+                filhoEsq.setValor(valor);
+                no.setEsq(filhoEsq);
+                return;
+            } else {
+                inserirValorAux(valor,no.getEsq());
+                return;
+            }
+        } else {
+            if (no.getDir() == null) {
+                Node filhoDir = new Node();
+                filhoDir.setValor(valor);
+                no.setDir(filhoDir);
+                return;
+            } else {
+                inserirValorAux(valor,no.getDir());
+                return;
+            }
+        }
+    }*/
 }
