@@ -7,7 +7,7 @@ package arvorebinariabusca;
 
 /**
  *
- * @author fabio.tpereiro
+ * @author victor.rolival
  */
 public class Main {
     
